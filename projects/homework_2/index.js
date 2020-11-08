@@ -44,10 +44,10 @@ function map(array, fn) {
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
 function reduce(array, fn, initial) {
-const hasInitial = typeof initial !== 'undefiend';
-let prev = hasInitial ? initial : array[0];
-
-for (let i = hasInitial ? 0 : 1; i < array.length; i++) {
+  const hasInitial = typeof initial !== 'undefiend';
+  let prev = hasInitial ? initial : array[0];
+  
+  for (let i = hasInitial ? 0 : 1; i < array.length; i++) {
   prev = fn(prev, array[1], i, array);
 }
 
