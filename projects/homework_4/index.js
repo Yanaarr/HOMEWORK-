@@ -25,7 +25,7 @@ function createDivWithText(text) {
    prepend(document.querySelector('#one'), document.querySelector('#two')) // добавит элемент переданный первым аргументом в начало элемента переданного вторым аргументом
  */
 function prepend(what, where) {
-  where.insertBefore(what, where.firstElementChild);
+  where.insertBefore(what, where.firstChild);
 }
 
 /*
@@ -51,7 +51,7 @@ function findAllPSiblings(where) {
   const nextP = [];
 
   for (const el of where.children) {
-    if (el.nextElementSibling.tagName === 'P') {
+    if (el.nextElementSibling && el.nextElementSibling.tagName === 'P') {
       nextP.push(el);
     }
   }
@@ -122,7 +122,7 @@ function deleteTextNodes(where) {
  */
 function deleteTextNodesRecursive(where) {
   for (let i = 0; i < where.childNodes.length; i++) {
-    const el = where.choldNodes[i];
+    const el = where.childNodes[i];
 
     if (el.nodeType === Element.TEXT_NODE) {
       where.removeChild(el);
