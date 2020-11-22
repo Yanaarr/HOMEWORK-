@@ -27,7 +27,7 @@ function forEach(array, fn) {
 function map(array, fn) {
   const modified = [];
 
-  for (let i = 0; i < array.lenth; i++) {
+  for (let i = 0; i < array.length; i++) {
     modified[i] = fn(array[i], i, array);
   }
 
@@ -48,7 +48,7 @@ function reduce(array, fn, initial) {
   let prev = hasInitial ? initial : array[0];
   
   for (let i = hasInitial ? 0 : 1; i < array.length; i++) {
-  prev = fn(prev, array[1], i, array);
+  prev = fn(prev, array[i], i, array);
 }
 
 return prev;
