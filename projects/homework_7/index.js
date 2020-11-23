@@ -75,7 +75,7 @@ addButton.addEventListener('click', () => {
     return;
   }
 
-  document.cookie = '${name}=${value}';
+  document.cookie = `${name}=${value}`;
   cookiesMap.set(name, value);
 
   updateTable();
@@ -86,7 +86,7 @@ listTable.addEventListener('click', (e) => {
 
   if (role === 'remove-cookie') {
     cookiesMap.delete(cookieName);
-    document.cookie = '${cookieName}=deleted; max-age=0';
+    document.cookie = `${cookieName}=deleted; max-age=0`;
     updateTable();
   }
 });
