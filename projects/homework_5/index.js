@@ -102,7 +102,7 @@ function updateFilter(filterValue) {
 
   const fragment = document.createDocumentFragment();
 
-  for (const town of town) {
+  for (const town of towns) {
     if (filterValue && isMatching(town.name, filterValue)) {
       const townDiv = document.createElement('div');
       townDiv.textContent = town.name;
